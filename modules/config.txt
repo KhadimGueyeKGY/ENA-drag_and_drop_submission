@@ -1,0 +1,5 @@
+export ORACLE_HOME=modules/instantclient_21_8/
+export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
+export PATH=$ORACLE_HOME:$PATH
+export ORACLE_CLIENT_LIB=$ORACLE_HOME
+source $HOME/.bashrc

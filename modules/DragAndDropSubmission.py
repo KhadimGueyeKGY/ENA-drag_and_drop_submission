@@ -123,7 +123,7 @@ class DDSubmission:
             for j in range(header_2.index('experiment_name'),header_2.index('uploaded file 2')+1):
                 if header_2[j]== 'experiment_name' :
                     manifest.write('NAME\t'+str(sup_metadata[j])+'\n')
-                elif header_2[j]== 'uploaded file 1' :
+                elif header_2[j]== 'uploaded file 1' and sup_metadata[j] != '':
                     manifest.write('FASTQ\t'+str(sup_metadata[j])+'\n')
                 elif header_2[j]== 'uploaded file 2' and sup_metadata[j] != '' :
                     manifest.write('FASTQ\t'+str(sup_metadata[j])+'\n')

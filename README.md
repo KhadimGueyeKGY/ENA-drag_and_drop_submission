@@ -43,7 +43,7 @@ After running this command, it will ask you a number of questions which are for 
   * $ Webin_account > Webin-xxxxxx
   * $ Do you use ENA test server for submission? [yes/no] > yes
   * $ path for the metadata spreadsheet (On excel file format) > data/uploader_tool_metadata_v5_genome_assemblies.xlsx
-  * $ Specify the type of action needed ( ADD or MODIFY) > ADD
+  * $ Specify the type of action needed ( ADD ) > ADD
 
 
 

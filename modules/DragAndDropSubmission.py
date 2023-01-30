@@ -149,13 +149,13 @@ class DDSubmission:
             
             if fq1 != 0 and fq2 != 0 :
                 if t == '-t':
-                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName "+webin_accout+" -password '"+suppasswd+"' -test -validate")
+                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"' -test -validate")
                     print('\n')
-                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName "+webin_accout+" -password '"+suppasswd+"' -test -submit")
+                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"' -test -submit")
                 else :
-                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName "+webin_accout+" -password '"+suppasswd+"'  -validate")
+                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"'  -validate")
                     print('\n')
-                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName "+webin_accout+" -password '"+suppasswd+"'  -submit")
+                    os.system("java -jar modules/webin-cli-5.2.0.jar -context reads -manifest "+directory+"/manifest_run"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"'  -submit")
                 print('\n\n')
             else :
                 print('\033[91m'+str(i-4)+' _No Fastq File')
@@ -221,13 +221,13 @@ class DDSubmission:
                 manifest.close()
                 if fa != 0:
                     if t == '-t':
-                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName '"+webin_accout+"' -password '"+suppasswd+"' -test -validate")
+                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"' -test -validate")
                         print('\n')
-                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName '"+webin_accout+"' -password '"+suppasswd+"' -test -submit")
+                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"' -test -submit")
                     else :
-                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName '"+webin_accout+"' -password '"+suppasswd+"' -validate")
+                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"' -validate")
                         print('\n')
-                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName '"+webin_accout+"' -password '"+suppasswd+"' -submit")
+                        os.system("java -jar modules/webin-cli-5.2.0.jar -context genome -manifest "+directory+"/manifest_analysis"+str(i-4)+".txt -inputDir "+directory+" -userName su-"+webin_accout+" -password '"+suppasswd+"' -submit")
                     print('\n\n')
                 else :
                     print('\033[91m'+str(i-4)+' _No Fasta File')

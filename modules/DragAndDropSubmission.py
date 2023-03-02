@@ -194,11 +194,17 @@ class DDSubmission:
                 run_id = ''
                 for j in res_run:
                     run_id = j[0] 
-                manifest.write('STUDY\t'+study_id+'\n') 
-                manifest.write('SAMPLE\t'+sample_id+'\n')
+                sup_metadata = list(metadata.iloc[i])
+                if str(sup_metadata[header_2.index('study_accession')]) != '-1':
+                	manifest.write('STUDY\t'+str(sup_metadata[header_2.index('study_accession')])+'\n')
+                else:
+                	manifest.write('STUDY\t'+study_id+'\n')
+                if str(sup_metadata[header_2.index('sample_accession')]) != '-1':
+                	manifest.write('SAMPLE\t'+str(sup_metadata[header_2.index('sample_accession')])+'\n')
+                else:
+                	manifest.write('SAMPLE\t'+sample_id+'\n')
                 if run_id != '':
                     manifest.write('RUN_REF\t'+run_id+'\n')
-                sup_metadata = list(metadata.iloc[i])
                 for j in range(header_2.index('assemblyname'),header_2.index('fasta/flatfile name')+1):
                     if header_2[j]== 'run_ref' :
                         pass
